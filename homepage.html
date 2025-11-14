@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The latest news and stories from around the world">
+    <title>Home - News Magazine</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="home blog">
+
+<!-- Site Header -->
+<header class="site-header">
+    <!-- Header Top Bar -->
+    <div class="header-top">
+        <div class="container">
+            <div class="header-date"></div>
+            <div class="header-actions">
+                <button class="btn">Subscribe</button>
+                <button class="btn">Login</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header Main -->
+    <div class="header-main">
+        <div class="container">
+            <div class="site-branding">
+                <h1 class="site-title">
+                    <a href="homepage.html">The News Magazine</a>
+                </h1>
+                <p class="site-tagline">All the News That's Fit to Print</p>
+            </div>
+
+            <div class="header-search">
+                <form class="search-form" role="search" method="get" action="search.html">
+                    <label for="search-input" class="sr-only">Search</label>
+                    <input
+                        type="search"
+                        id="search-input"
+                        class="search-input"
+                        placeholder="Search..."
+                        name="s"
+                        aria-label="Search">
+                    <button type="submit" class="search-submit" aria-label="Submit search">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Primary Navigation -->
+    <nav class="primary-navigation" role="navigation">
+        <div class="container">
+            <button class="menu-toggle" aria-expanded="false" aria-label="Toggle navigation">
+                ☰
+            </button>
+            <ul class="nav-menu">
+                <li class="current-menu-item"><a href="homepage.html">Home</a></li>
+                <li><a href="archive.html">World</a></li>
+                <li><a href="archive.html">Politics</a></li>
+                <li><a href="archive.html">Business</a></li>
+                <li><a href="archive.html">Technology</a></li>
+                <li><a href="archive.html">Science</a></li>
+                <li><a href="archive.html">Health</a></li>
+                <li><a href="archive.html">Sports</a></li>
+                <li><a href="archive.html">Culture</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<!-- Main Content -->
+<main class="site-main">
+    <!-- Featured Article -->
+    <section class="featured-section">
+        <div class="container">
+            <article class="article-card article-card-featured">
+                <div class="article-meta">
+                    <a href="archive.html" class="article-category">World</a>
+                    <span class="article-date">
+                        <time datetime="2025-11-14">November 14, 2025</time>
+                    </span>
+                </div>
+
+                <header class="article-header-preview">
+                    <h2 class="article-title">
+                        <a href="article.html">Global Leaders Convene for Historic Climate Summit in Copenhagen</a>
+                    </h2>
+                </header>
+
+                <figure class="article-thumbnail">
+                    <a href="article.html">
+                        <img src="https://via.placeholder.com/1200x600/326891/ffffff?text=Featured+Article" alt="Climate Summit">
+                    </a>
+                </figure>
+
+                <div class="article-excerpt">
+                    <p>Representatives from more than 150 countries gathered today for what experts are calling the most critical climate negotiations in a decade. The summit aims to address urgent environmental challenges and establish binding commitments for carbon neutrality by 2050.</p>
+                </div>
+
+                <div class="article-meta">
+                    <span class="article-author">By <a href="author.html">Sarah Johnson</a></span>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Secondary Featured Articles -->
+    <section class="secondary-featured mb-xl">
+        <div class="container">
+            <div class="articles-grid articles-grid-3">
+                <article class="article-card">
+                    <div class="article-meta">
+                        <a href="archive.html" class="article-category">Technology</a>
+                    </div>
+                    <figure class="article-thumbnail">
+                        <a href="article.html">
+                            <img src="https://via.placeholder.com/600x400/326891/ffffff?text=Tech+News" alt="Technology News">
+                        </a>
+                    </figure>
+                    <header>
+                        <h3 class="article-title">
+                            <a href="article.html">AI Breakthrough Promises to Revolutionize Healthcare Diagnostics</a>
+                        </h3>
+                    </header>
+                    <div class="article-excerpt">
+                        <p>Researchers announce a new artificial intelligence system capable of detecting diseases with unprecedented accuracy.</p>
+                    </div>
+                    <div class="article-meta">
+                        <span class="article-author">By <a href="author.html">Michael Chen</a></span>
+                        <span class="article-date">
+                            <time datetime="2025-11-14">Nov 14</time>
+                        </span>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="article-meta">
+                        <a href="archive.html" class="article-category">Business</a>
+                    </div>
+                    <figure class="article-thumbnail">
+                        <a href="article.html">
+                            <img src="https://via.placeholder.com/600x400/326891/ffffff?text=Business" alt="Business News">
+                        </a>
+                    </figure>
+                    <header>
+                        <h3 class="article-title">
+                            <a href="article.html">Markets Rally as Economic Growth Exceeds Expectations</a>
+                        </h3>
+                    </header>
+                    <div class="article-excerpt">
+                        <p>Stock markets worldwide posted significant gains following the release of better-than-expected economic data.</p>
+                    </div>
+                    <div class="article-meta">
+                        <span class="article-author">By <a href="author.html">Emily Rodriguez</a></span>
+                        <span class="article-date">
+                            <time datetime="2025-11-14">Nov 14</time>
+                        </span>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="article-meta">
+                        <a href="archive.html" class="article-category">Culture</a>
+                    </div>
+                    <figure class="article-thumbnail">
+                        <a href="article.html">
+                            <img src="https://via.placeholder.com/600x400/326891/ffffff?text=Culture" alt="Culture News">
+                        </a>
+                    </figure>
+                    <header>
+                        <h3 class="article-title">
+                            <a href="article.html">Metropolitan Museum Unveils Largest Exhibition of Contemporary Art</a>
+                        </h3>
+                    </header>
+                    <div class="article-excerpt">
+                        <p>The groundbreaking exhibition features works from over 200 artists representing diverse perspectives and mediums.</p>
+                    </div>
+                    <div class="article-meta">
+                        <span class="article-author">By <a href="author.html">David Kim</a></span>
+                        <span class="article-date">
+                            <time datetime="2025-11-14">Nov 14</time>
+                        </span>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Opinion Section -->
+    <section class="opinion-section mb-xl">
+        <div class="container">
+            <header class="section-header mb-lg">
+                <h2 class="section-title">Opinion</h2>
+            </header>
+
+            <div class="articles-grid articles-grid-2">
+                <article class="article-card">
+                    <div class="article-meta">
+                        <a href="archive.html" class="article-category">Opinion</a>
+                    </div>
+                    <header>
+                        <h3 class="article-title">
+                            <a href="article.html">The Future of Democracy in the Digital Age</a>
+                        </h3>
+                    </header>
+                    <div class="article-excerpt">
+                        <p>As technology reshapes our society, we must reconsider how democratic institutions can adapt to ensure representation and accountability in an increasingly connected world.</p>
+                    </div>
+                    <div class="article-meta">
+                        <span class="article-author">By <a href="author.html">Jennifer Martinez</a></span>
+                        <span class="article-date">
+                            <time datetime="2025-11-14">Nov 14</time>
+                        </span>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="article-meta">
+                        <a href="archive.html" class="article-category">Opinion</a>
+                    </div>
+                    <header>
+                        <h3 class="article-title">
+                            <a href="article.html">Why Education Reform Cannot Wait</a>
+                        </h3>
+                    </header>
+                    <div class="article-excerpt">
+                        <p>The pandemic has exposed deep inequities in our educational system. Bold action is needed now to ensure every student has access to quality learning opportunities.</p>
+                    </div>
+                    <div class="article-meta">
+                        <span class="article-author">By <a href="author.html">Robert Thompson</a></span>
+                        <span class="article-date">
+                            <time datetime="2025-11-13">Nov 13</time>
+                        </span>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest News Grid -->
+    <section class="latest-news-section mb-xl">
+        <div class="container">
+            <header class="section-header mb-lg">
+                <h2 class="section-title">Latest News</h2>
+            </header>
+
+            <div class="articles-grid articles-grid-4">
+                <article class="article-card article-card-small">
+                    <figure class="article-thumbnail">
+                        <a href="article.html">
+                            <img src="https://via.placeholder.com/400x300/326891/ffffff?text=News" alt="News">
+                        </a>
+                    </figure>
+                    <div class="article-meta">
+                        <a href="archive.html" class="article-category">Politics</a>
+                    </div>
+                    <header>
+                        <h4 class="article-title">
+                            <a href="article.html">Senate Passes Major Infrastructure Bill</a>
+                        </h4>
+                    </header>
+                    <div class="article-meta">
+                        <span class="article-date">
+                            <time datetime="2025-11-13">Nov 13</time>
+                        </span>
+                    </div>
+                </article>
+
+                <article class="article-card article-card-small">
+                    <figure class="article-thumbnail">
+                        <a href="article.html">
+                            <img src="https://via.placeholder.com/400x300/326891/ffffff?text=Sports" alt="Sports">
+                        </a>
+                    </figure>
+                    <div class="article-meta">
+                        <a href="archive.html" class="article-category">Sports</a>
+                    </div>
+                    <header>
+                        <h4 class="article-title">
+                            <a href="article.html">Championship Finals Set Record Viewership</a>
+                        </h4>
+                    </header>
+                    <div class="article-meta">
+                        <span class="article-date">
+                            <time datetime="2025-11-13">Nov 13</time>
+                        </span>
+                    </div>
+                </article>
+
+                <article class="article-card article-card-small">
+                    <figure class="article-thumbnail">
+                        <a href="article.html">
+                            <img src="https://via.placeholder.com/400x300/326891/ffffff?text=Science" alt="Science">
+                        </a>
+                    </figure>
+                    <div class="article-meta">
+                        <a href="archive.html" class="article-category">Science</a>
+                    </div>
+                    <header>
+                        <h4 class="article-title">
+                            <a href="article.html">NASA Announces New Mars Mission</a>
+                        </h4>
+                    </header>
+                    <div class="article-meta">
+                        <span class="article-date">
+                            <time datetime="2025-11-12">Nov 12</time>
+                        </span>
+                    </div>
+                </article>
+
+                <article class="article-card article-card-small">
+                    <figure class="article-thumbnail">
+                        <a href="article.html">
+                            <img src="https://via.placeholder.com/400x300/326891/ffffff?text=Health" alt="Health">
+                        </a>
+                    </figure>
+                    <div class="article-meta">
+                        <a href="archive.html" class="article-category">Health</a>
+                    </div>
+                    <header>
+                        <h4 class="article-title">
+                            <a href="article.html">Study Reveals Benefits of Mediterranean Diet</a>
+                        </h4>
+                    </header>
+                    <div class="article-meta">
+                        <span class="article-date">
+                            <time datetime="2025-11-12">Nov 12</time>
+                        </span>
+                    </div>
+                </article>
+
+                <article class="article-card article-card-small">
+                    <figure class="article-thumbnail">
+                        <a href="article.html">
+                            <img src="https://via.placeholder.com/400x300/326891/ffffff?text=World" alt="World">
+                        </a>
+                    </figure>
+                    <div class="article-meta">
+                        <a href="archive.html" class="article-category">World</a>
+                    </div>
+                    <header>
+                        <h4 class="article-title">
+                            <a href="article.html">Peace Talks Resume in Middle East</a>
+                        </h4>
+                    </header>
+                    <div class="article-meta">
+                        <span class="article-date">
+                            <time datetime="2025-11-12">Nov 12</time>
+                        </span>
+                    </div>
+                </article>
+
+                <article class="article-card article-card-small">
+                    <figure class="article-thumbnail">
+                        <a href="article.html">
+                            <img src="https://via.placeholder.com/400x300/326891/ffffff?text=Tech" alt="Technology">
+                        </a>
+                    </figure>
+                    <div class="article-meta">
+                        <a href="archive.html" class="article-category">Technology</a>
+                    </div>
+                    <header>
+                        <h4 class="article-title">
+                            <a href="article.html">Tech Giants Face New Regulations</a>
+                        </h4>
+                    </header>
+                    <div class="article-meta">
+                        <span class="article-date">
+                            <time datetime="2025-11-11">Nov 11</time>
+                        </span>
+                    </div>
+                </article>
+
+                <article class="article-card article-card-small">
+                    <figure class="article-thumbnail">
+                        <a href="article.html">
+                            <img src="https://via.placeholder.com/400x300/326891/ffffff?text=Economy" alt="Economy">
+                        </a>
+                    </figure>
+                    <div class="article-meta">
+                        <a href="archive.html" class="article-category">Business</a>
+                    </div>
+                    <header>
+                        <h4 class="article-title">
+                            <a href="article.html">Central Bank Holds Interest Rates Steady</a>
+                        </h4>
+                    </header>
+                    <div class="article-meta">
+                        <span class="article-date">
+                            <time datetime="2025-11-11">Nov 11</time>
+                        </span>
+                    </div>
+                </article>
+
+                <article class="article-card article-card-small">
+                    <figure class="article-thumbnail">
+                        <a href="article.html">
+                            <img src="https://via.placeholder.com/400x300/326891/ffffff?text=Entertainment" alt="Entertainment">
+                        </a>
+                    </figure>
+                    <div class="article-meta">
+                        <a href="archive.html" class="article-category">Culture</a>
+                    </div>
+                    <header>
+                        <h4 class="article-title">
+                            <a href="article.html">Film Festival Announces Award Winners</a>
+                        </h4>
+                    </header>
+                    <div class="article-meta">
+                        <span class="article-date">
+                            <time datetime="2025-11-11">Nov 11</time>
+                        </span>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Site Footer -->
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>News</h3>
+                <ul class="footer-menu">
+                    <li><a href="archive.html">World</a></li>
+                    <li><a href="archive.html">Politics</a></li>
+                    <li><a href="archive.html">Business</a></li>
+                    <li><a href="archive.html">Technology</a></li>
+                    <li><a href="archive.html">Science</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Opinion</h3>
+                <ul class="footer-menu">
+                    <li><a href="archive.html">Today's Opinion</a></li>
+                    <li><a href="archive.html">Columnists</a></li>
+                    <li><a href="archive.html">Editorials</a></li>
+                    <li><a href="archive.html">Op-Ed Contributors</a></li>
+                    <li><a href="archive.html">Letters</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>More</h3>
+                <ul class="footer-menu">
+                    <li><a href="archive.html">Arts</a></li>
+                    <li><a href="archive.html">Sports</a></li>
+                    <li><a href="archive.html">Health</a></li>
+                    <li><a href="archive.html">Food</a></li>
+                    <li><a href="archive.html">Travel</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Subscribe</h3>
+                <ul class="footer-menu">
+                    <li><a href="#">Home Delivery</a></li>
+                    <li><a href="#">Digital Subscriptions</a></li>
+                    <li><a href="#">Gift Subscriptions</a></li>
+                    <li><a href="#">Group Subscriptions</a></li>
+                    <li><a href="#">Corporate Subscriptions</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 The News Magazine. All rights reserved. |
+                <a href="page.html">Privacy Policy</a> |
+                <a href="page.html">Terms of Service</a> |
+                <a href="page.html">Contact Us</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+<!-- JavaScript -->
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
