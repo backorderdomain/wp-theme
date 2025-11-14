@@ -9,7 +9,7 @@
     // Wait for DOM to be ready
     document.addEventListener('DOMContentLoaded', function() {
         initMobileMenu();
-        initSearch();
+        initSearchOverlay();
         initSmoothScroll();
         initDateDisplay();
         initShareButtons();
@@ -20,74 +20,124 @@
      */
     function initMobileMenu() {
         const menuToggle = document.querySelector('.menu-toggle');
-        const navMenu = document.querySelector('.nav-menu');
+        const primaryNav = document.querySelector('.primary-navigation');
 
-        if (!menuToggle || !navMenu) return;
+        if (!menuToggle || !primaryNav) return;
 
-        menuToggle.addEventListener('click', function() {
-            navMenu.classList.toggle('active');
+        menuToggle.addEventListener('click', function(e) {
+            e.stopPropagation();
+            primaryNav.classList.toggle('active');
 
             // Update aria-expanded attribute
-            const isExpanded = navMenu.classList.contains('active');
+            const isExpanded = primaryNav.classList.contains('active');
             menuToggle.setAttribute('aria-expanded', isExpanded);
+
+            // Prevent body scroll when menu is open
+            if (isExpanded) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
         });
 
         // Close menu when clicking outside
         document.addEventListener('click', function(e) {
-            if (!e.target.closest('.primary-navigation')) {
-                navMenu.classList.remove('active');
+            if (!e.target.closest('.primary-navigation') && !e.target.closest('.menu-toggle')) {
+                primaryNav.classList.remove('active');
                 menuToggle.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
             }
         });
 
         // Close menu on escape key
         document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && navMenu.classList.contains('active')) {
-                navMenu.classList.remove('active');
+            if (e.key === 'Escape' && primaryNav.classList.contains('active')) {
+                primaryNav.classList.remove('active');
                 menuToggle.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
                 menuToggle.focus();
             }
+        });
+
+        // Close menu when clicking on menu links
+        const navLinks = primaryNav.querySelectorAll('.nav-menu a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                primaryNav.classList.remove('active');
+                menuToggle.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
+            });
         });
     }
 
     /**
-     * Search Functionality
+     * Search Overlay Functionality
      */
-    function initSearch() {
-        const searchForm = document.querySelector('.search-form');
-        const searchInput = document.querySelector('.search-input');
+    function initSearchOverlay() {
+        const searchToggleBtn = document.querySelector('.search-toggle-btn');
+        const searchOverlay = document.querySelector('.search-overlay');
+        const searchOverlayClose = document.querySelector('.search-overlay-close');
+        const searchForm = searchOverlay ? searchOverlay.querySelector('.search-form') : null;
+        const searchInput = searchOverlay ? searchOverlay.querySelector('.search-input') : null;
 
-        if (!searchForm || !searchInput) return;
+        if (!searchToggleBtn || !searchOverlay) return;
 
-        // Expand search on focus (optional enhancement)
-        searchInput.addEventListener('focus', function() {
-            this.parentElement.classList.add('active');
+        // Open search overlay
+        searchToggleBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            searchOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+
+            // Focus on search input
+            setTimeout(function() {
+                if (searchInput) searchInput.focus();
+            }, 100);
         });
 
-        searchInput.addEventListener('blur', function() {
-            if (!this.value) {
-                this.parentElement.classList.remove('active');
+        // Close search overlay
+        function closeSearchOverlay() {
+            searchOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        if (searchOverlayClose) {
+            searchOverlayClose.addEventListener('click', closeSearchOverlay);
+        }
+
+        // Close on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && searchOverlay.classList.contains('active')) {
+                closeSearchOverlay();
             }
         });
 
-        // Handle search submission
-        searchForm.addEventListener('submit', function(e) {
-            const query = searchInput.value.trim();
-
-            if (!query) {
-                e.preventDefault();
-                alert('Please enter a search term');
-                searchInput.focus();
-                return false;
-            }
-
-            // For WordPress conversion, this will be handled by WP
-            // For static HTML, redirect to search.html
-            if (window.location.hostname === 'localhost' || !window.wp) {
-                e.preventDefault();
-                window.location.href = 'search.html?s=' + encodeURIComponent(query);
+        // Close when clicking outside
+        searchOverlay.addEventListener('click', function(e) {
+            if (e.target === searchOverlay) {
+                closeSearchOverlay();
             }
         });
+
+        // Handle search form submission
+        if (searchForm && searchInput) {
+            searchForm.addEventListener('submit', function(e) {
+                const query = searchInput.value.trim();
+
+                if (!query) {
+                    e.preventDefault();
+                    alert('Please enter a search term');
+                    searchInput.focus();
+                    return false;
+                }
+
+                // For WordPress conversion, this will be handled by WP
+                // For static HTML, redirect to search.html
+                if (window.location.hostname === 'localhost' || !window.wp) {
+                    e.preventDefault();
+                    window.location.href = 'search.html?s=' + encodeURIComponent(query);
+                }
+            });
+        }
     }
 
     /**

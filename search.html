@@ -29,9 +29,10 @@
         </div>
     </div>
 
-    <!-- Header Main -->
+    <!-- Header Main: Logo - Menu - Search -->
     <div class="header-main">
         <div class="container">
+            <!-- Logo / Branding -->
             <div class="site-branding">
                 <h1 class="site-title">
                     <a href="homepage.html">The News Magazine</a>
@@ -39,47 +40,61 @@
                 <p class="site-tagline">All the News That's Fit to Print</p>
             </div>
 
-            <div class="header-search">
-                <form class="search-form" role="search" method="get" action="search.html">
-                    <label for="search-input" class="sr-only">Search</label>
-                    <input
-                        type="search"
-                        id="search-input"
-                        class="search-input"
-                        placeholder="Search..."
-                        name="s"
-                        value="climate"
-                        aria-label="Search">
-                    <button type="submit" class="search-submit" aria-label="Submit search">
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-                        </svg>
-                    </button>
-                </form>
+            <!-- Primary Navigation (Desktop) -->
+            <nav class="primary-navigation" role="navigation">
+                <ul class="nav-menu">
+                    <li><a href="homepage.html">Home</a></li>
+                    <li><a href="archive.html">World</a></li>
+                    <li><a href="archive.html">Politics</a></li>
+                    <li><a href="archive.html">Business</a></li>
+                    <li><a href="archive.html">Technology</a></li>
+                    <li><a href="archive.html">Science</a></li>
+                    <li><a href="archive.html">Health</a></li>
+                    <li><a href="archive.html">Sports</a></li>
+                    <li><a href="archive.html">Culture</a></li>
+                </ul>
+            </nav>
+
+            <!-- Header Controls: Search + Menu Toggle -->
+            <div class="header-controls">
+                <button class="search-toggle-btn" aria-label="Open search">
+                    <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                    </svg>
+                </button>
+                <button class="menu-toggle" aria-expanded="false" aria-label="Toggle navigation">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
             </div>
         </div>
     </div>
-
-    <!-- Primary Navigation -->
-    <nav class="primary-navigation" role="navigation">
-        <div class="container">
-            <button class="menu-toggle" aria-expanded="false" aria-label="Toggle navigation">
-                ☰
-            </button>
-            <ul class="nav-menu">
-                <li><a href="homepage.html">Home</a></li>
-                <li><a href="archive.html">World</a></li>
-                <li><a href="archive.html">Politics</a></li>
-                <li><a href="archive.html">Business</a></li>
-                <li><a href="archive.html">Technology</a></li>
-                <li><a href="archive.html">Science</a></li>
-                <li><a href="archive.html">Health</a></li>
-                <li><a href="archive.html">Sports</a></li>
-                <li><a href="archive.html">Culture</a></li>
-            </ul>
-        </div>
-    </nav>
 </header>
+
+<!-- Search Overlay -->
+<div class="search-overlay">
+    <div class="search-overlay-content">
+        <button class="search-overlay-close" aria-label="Close search">×</button>
+        <form class="search-form" role="search" method="get" action="search.html">
+            <label for="search-overlay-input" class="sr-only">Search</label>
+            <input
+                type="search"
+                id="search-overlay-input"
+                class="search-input"
+                placeholder="Type to search..."
+                name="s"
+                aria-label="Search">
+            <button type="submit" class="search-submit" aria-label="Submit search">
+                <svg width="24" height="24" viewBox="0 0 16 16" fill="currentColor">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                </svg>
+            </button>
+        </form>
+    </div>
+</div>
 
 <!-- Main Content -->
 <main class="site-main">
